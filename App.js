@@ -25,12 +25,19 @@ export default function App() {
           }}
         />
 
-        <Stack.Screen name="Categories" component={CategoriesScreen} />
+        <Stack.Screen
+          name="Categories"
+          component={CategoriesScreen}
+          options={{
+            headerLeft: () => <></>,
+          }}
+        />
         <Stack.Screen
           name="Finance"
           component={FinanceScreen}
           options={{
             headerRight: () => <CatButton />,
+            headerLeft: () => <></>,
           }}
         />
         <Stack.Screen
@@ -38,6 +45,7 @@ export default function App() {
           component={MedicScreen}
           options={{
             headerRight: () => <CatButton />,
+            headerLeft: () => <></>,
           }}
         />
         <Stack.Screen
@@ -45,6 +53,7 @@ export default function App() {
           component={ScienceScreen}
           options={{
             headerRight: () => <CatButton />,
+            headerLeft: () => <></>,
           }}
         />
         <Stack.Screen
@@ -52,6 +61,7 @@ export default function App() {
           component={SportsScreen}
           options={{
             headerRight: () => <CatButton />,
+            headerLeft: () => <></>,
           }}
         />
         <Stack.Screen
@@ -59,6 +69,7 @@ export default function App() {
           component={TechScreen}
           options={{
             headerRight: () => <CatButton />,
+            headerLeft: () => <></>,
           }}
         />
         <Stack.Screen
@@ -66,6 +77,7 @@ export default function App() {
           component={GlobalScreen}
           options={{
             headerRight: () => <CatButton />,
+            headerLeft: () => <></>,
           }}
         />
       </Stack.Navigator>

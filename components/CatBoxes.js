@@ -9,6 +9,7 @@ const CatBoxes = (props) => {
         return (
           <TouchableOpacity
             key={i}
+            styles={styles.touch}
             onPress={i === 1 ? props.faction : props.saction}
           >
             <LinearGradient
@@ -31,6 +32,13 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     justifyContent: "center",
+  },
+  touch: {
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 10 },
+    shadowOpacity: 0.8,
+    shadowRadius: 2,
+    elevation: 5,
   },
   button: {
     width: 200,
