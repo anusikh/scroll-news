@@ -1,7 +1,5 @@
 {
   "dependencies": {
-    "@material-ui/core": "^4.12.3",
-    "@mui/icons-material": "^5.0.1",
     "@react-navigation/native": "^6.0.4",
     "@react-navigation/native-stack": "^6.2.2",
     "expo": "~42.0.0",
