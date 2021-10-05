@@ -10,77 +10,81 @@ import ScienceScreen from "./components/CategoryScreens/ScienceScreen";
 import SportsScreen from "./components/CategoryScreens/SportsScreen";
 import GlobalScreen from "./components/CategoryScreens/GlobalScreen";
 import TechScreen from "./components/CategoryScreens/TechScreen";
+import { Provider } from "react-redux";
+import store from "./redux/store";
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-          name="Home"
-          component={HomeScreen}
-          options={{
-            headerRight: () => <CatButton />,
-          }}
-        />
+    <Provider store={store}>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen
+            name="Home"
+            component={HomeScreen}
+            options={{
+              headerRight: () => <CatButton />,
+            }}
+          />
 
-        <Stack.Screen
-          name="Categories"
-          component={CategoriesScreen}
-          options={{
-            headerLeft: () => <></>,
-          }}
-        />
-        <Stack.Screen
-          name="Finance"
-          component={FinanceScreen}
-          options={{
-            headerRight: () => <CatButton />,
-            headerLeft: () => <></>,
-          }}
-        />
-        <Stack.Screen
-          name="Medicine"
-          component={MedicScreen}
-          options={{
-            headerRight: () => <CatButton />,
-            headerLeft: () => <></>,
-          }}
-        />
-        <Stack.Screen
-          name="Science"
-          component={ScienceScreen}
-          options={{
-            headerRight: () => <CatButton />,
-            headerLeft: () => <></>,
-          }}
-        />
-        <Stack.Screen
-          name="Sports"
-          component={SportsScreen}
-          options={{
-            headerRight: () => <CatButton />,
-            headerLeft: () => <></>,
-          }}
-        />
-        <Stack.Screen
-          name="Tech"
-          component={TechScreen}
-          options={{
-            headerRight: () => <CatButton />,
-            headerLeft: () => <></>,
-          }}
-        />
-        <Stack.Screen
-          name="Global"
-          component={GlobalScreen}
-          options={{
-            headerRight: () => <CatButton />,
-            headerLeft: () => <></>,
-          }}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
+          <Stack.Screen
+            name="Categories"
+            component={CategoriesScreen}
+            options={{
+              headerLeft: () => <></>,
+            }}
+          />
+          <Stack.Screen
+            name="Finance"
+            component={FinanceScreen}
+            options={{
+              headerRight: () => <CatButton />,
+              headerLeft: () => <></>,
+            }}
+          />
+          <Stack.Screen
+            name="Medicine"
+            component={MedicScreen}
+            options={{
+              headerRight: () => <CatButton />,
+              headerLeft: () => <></>,
+            }}
+          />
+          <Stack.Screen
+            name="Science"
+            component={ScienceScreen}
+            options={{
+              headerRight: () => <CatButton />,
+              headerLeft: () => <></>,
+            }}
+          />
+          <Stack.Screen
+            name="Sports"
+            component={SportsScreen}
+            options={{
+              headerRight: () => <CatButton />,
+              headerLeft: () => <></>,
+            }}
+          />
+          <Stack.Screen
+            name="Tech"
+            component={TechScreen}
+            options={{
+              headerRight: () => <CatButton />,
+              headerLeft: () => <></>,
+            }}
+          />
+          <Stack.Screen
+            name="Global"
+            component={GlobalScreen}
+            options={{
+              headerRight: () => <CatButton />,
+              headerLeft: () => <></>,
+            }}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </Provider>
   );
 }
