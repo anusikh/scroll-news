@@ -1,141 +1,10 @@
 import React from "react";
-import { StyleSheet, View, Dimensions, Text } from "react-native";
+import { StyleSheet, View, Dimensions, ActivityIndicator } from "react-native";
 import Carousel from "react-native-snap-carousel";
 import { useDispatch } from "react-redux";
 import { getNews } from "../redux/reducer";
 import NewsCarouselItems from "./NewsCarouselItems";
 import { useSelector } from "react-redux";
-
-const articles = [
-  {
-    status: "SEEN",
-    title: "Reference form received",
-    createdTime: new Date(),
-    notificationData: {
-      customerName: "Roseburg Forest Producsts",
-      refType: "Trade",
-      refCompanyName: "Metals Depot",
-    },
-  },
-  {
-    status: "SEEN",
-    title: "Reference form received",
-    createdTime: new Date(),
-    notificationData: {
-      customerName: "Roseburg Forest Productsss",
-      refType: "Trade",
-      refCompanyName: "Metals Depot",
-    },
-  },
-  {
-    status: "SEEN",
-    title: "Reference form received",
-    createdTime: new Date(),
-    notificationData: {
-      customerName: "Roseburg Forest Products",
-      refType: "Bank",
-      refCompanyName: "Metals Depot",
-    },
-  },
-  {
-    status: "NOT_SEEN",
-    title: "New Application Received",
-    createdTime: new Date(),
-    notificationData: {
-      customerName: "Roseburg Forest Products",
-      refType: "Bank",
-      refCompanyName: "Metals Depot",
-    },
-  },
-  {
-    status: "NOT_SEEN",
-    title: "New Application Received",
-    createdTime: new Date(),
-    notificationData: {
-      customerName: "Roseburg Forest Products",
-    },
-  },
-  {
-    status: "SEEN",
-    title: "New Application Received",
-    createdTime: new Date(),
-    notificationData: {
-      customerName: "Roseburg Forest Products",
-    },
-  },
-  {
-    status: "NOT_SEEN",
-    title: "New Application Received",
-    createdTime: new Date(),
-    notificationData: {
-      customerName: "Roseburg Forest Products",
-    },
-  },
-  {
-    status: "NOT_SEEN",
-    title: "New Application Received",
-    createdTime: new Date(),
-    notificationData: {
-      customerName: "Roseburg Forest Products",
-    },
-  },
-  {
-    status: "SEEN",
-    title: "New Application Received",
-    createdTime: new Date(),
-    notificationData: {
-      customerName: "Roseburg Forest Products",
-    },
-  },
-  {
-    status: "NOT_SEEN",
-    title: "New Application Received",
-    createdTime: new Date(),
-    notificationData: {
-      customerName: "Roseburg Forest Products",
-    },
-  },
-  {
-    status: "SEEN",
-    title: "New Application Received",
-    createdTime: new Date(),
-    notificationData: {
-      customerName: "Roseburg Forest Products",
-    },
-  },
-  {
-    status: "NOT_SEEN",
-    title: "New Application Received",
-    createdTime: new Date(),
-    notificationData: {
-      customerName: "Roseburg Forest Products",
-    },
-  },
-  {
-    status: "SEEN",
-    title: "New Application Received",
-    createdTime: new Date(),
-    notificationData: {
-      customerName: "Roseburg Forest Products",
-    },
-  },
-  {
-    status: "NOT_SEEN",
-    title: "New Application Received",
-    createdTime: new Date(),
-    notificationData: {
-      customerName: "Roseburg Forest Products",
-    },
-  },
-  {
-    status: "SEEN",
-    title: "New Application Received",
-    createdTime: new Date(),
-    notificationData: {
-      customerName: "Roseburg Forest Products",
-    },
-  },
-];
 
 const HomeScreen = () => {
   const [activeIndex, setActiveIndex] = React.useState();
@@ -151,7 +20,7 @@ const HomeScreen = () => {
     <View style={styles.carousel}>
       {x ? (
         <Carousel
-          layout={"stack"}
+          layout={"default"}
           data={x?.articles?.slice(0, 10)}
           sliderHeight={300}
           itemHeight={Dimensions.get("window").height}
@@ -161,7 +30,9 @@ const HomeScreen = () => {
         />
       ) : (
         //TODO: add circular loading
-        <Text>Loading</Text>
+        <View style={[styles.container, styles.horizontal]}>
+          <ActivityIndicator size="large" color="#192f6a" />
+        </View>
       )}
     </View>
   );
@@ -174,5 +45,15 @@ const styles = StyleSheet.create({
     flex: 1,
     transform: [{ scaleY: -1 }],
     backgroundColor: "grey",
+  },
+  container: {
+    backgroundColor: "white",
+    flex: 1,
+    justifyContent: "center",
+  },
+  horizontal: {
+    flexDirection: "row",
+    justifyContent: "space-around",
+    padding: 10,
   },
 });
