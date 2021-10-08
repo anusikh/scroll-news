@@ -1,6 +1,7 @@
 import React from "react";
 import { Dimensions, Image, StyleSheet, Text, View } from "react-native";
 import { dateUtil } from "../utility/utility";
+import Footer from "./Footer";
 
 const NewsCarouselItems = ({ item }) => {
   const data = item.item;
@@ -12,6 +13,10 @@ const NewsCarouselItems = ({ item }) => {
       <Text style={styles.author}>{data.author}</Text>
       <Text style={styles.publishedAt}>{dateUtil(data.publishedAt)}</Text>
       <Text style={styles.description}>{data.description}</Text>
+
+      <View style={styles.footer}>
+        <Footer data={data} />
+      </View>
     </View>
   );
 };
@@ -43,5 +48,8 @@ const styles = StyleSheet.create({
     fontSize: 10,
     marginBottom: 5,
   },
-  description: {},
+  footer: {
+    position: "absolute",
+    bottom: 0,
+  },
 });
