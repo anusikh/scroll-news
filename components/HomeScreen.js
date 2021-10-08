@@ -21,7 +21,7 @@ const HomeScreen = () => {
       {x ? (
         <Carousel
           layout={"default"}
-          data={x?.articles?.slice(0, 10)}
+          data={x?.articles?.slice(0, 40)}
           sliderHeight={300}
           itemHeight={Dimensions.get("window").height}
           vertical={true}
