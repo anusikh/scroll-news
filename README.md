@@ -1,4 +1,6 @@
-# My Universal React Project
+# An "Inshorts" App clone
+
+![](assets/sample.gif)
 
 <p>
   <!-- iOS -->
