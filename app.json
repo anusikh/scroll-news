@@ -4,6 +4,7 @@
     "slug": "scroll-news",
     "version": "1.0.0",
     "sdkVersion": "42.0.0",
+    "jsEngine": "hermes",
     "platforms": ["ios", "android", "web"],
     "android": {
       "package": "com.anusikh.news"
