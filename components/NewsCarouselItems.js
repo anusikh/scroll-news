@@ -9,6 +9,7 @@ const NewsCarouselItems = ({ item }) => {
   return (
     <View style={styles.container}>
       <Image style={styles.image} source={{ uri: data.urlToImage }} />
+
       <Text style={styles.title}>{data.title}</Text>
       <Text style={styles.author}>{data.author}</Text>
       <Text style={styles.publishedAt}>{dateUtil(data.publishedAt)}</Text>
@@ -36,10 +37,11 @@ const styles = StyleSheet.create({
     width: Dimensions.get("window").width - 20,
     height: Dimensions.get("window").height / 3,
     marginBottom: 10,
+    borderRadius: 10,
   },
   title: {
     fontSize: 30,
-    marginBottom: 5,
+    marginBottom: 20,
   },
   author: {
     marginBottom: 2,
@@ -51,5 +53,8 @@ const styles = StyleSheet.create({
   footer: {
     position: "absolute",
     bottom: 0,
+  },
+  description: {
+    marginTop: 15,
   },
 });

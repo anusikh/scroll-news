@@ -13,7 +13,7 @@ const CatBoxes = (props) => {
             onPress={i === 1 ? props.faction : props.saction}
           >
             <LinearGradient
-              colors={["#4c669f", "#3b5998", "#192f6a"]}
+              colors={["#7F0AC9", "#6B70D1"]}
               style={styles.button}
             >
               {i === 1 ? props.ficon : props.sicon}

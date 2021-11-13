@@ -7,6 +7,7 @@ import {
   Share,
   Linking,
 } from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
 import { Icon } from "react-native-elements/dist/icons/Icon";
 
 const Footer = ({ data }) => {
@@ -35,16 +36,20 @@ const Footer = ({ data }) => {
             Linking.openURL(data.url);
           }}
         >
-          <Icon name="open-outline" type="ionicon" size={50} color="grey" />
+          <LinearGradient colors={["#7F0AC9", "#6B70D1"]} style={styles.button}>
+            <Icon name="logo-chrome" type="ionicon" size={30} color="white" />
+          </LinearGradient>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.button} onPress={onShare}>
-          <Icon
-            name="share-social-outline"
-            type="ionicon"
-            size={50}
-            color="grey"
-          />
+          <LinearGradient colors={["#7F0AC9", "#6B70D1"]} style={styles.button}>
+            <Icon
+              name="share-social-outline"
+              type="ionicon"
+              size={30}
+              color="white"
+            />
+          </LinearGradient>
         </TouchableOpacity>
       </View>
     </View>
@@ -68,7 +73,9 @@ const styles = StyleSheet.create({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    height: 70,
-    width: Dimensions.get("window").width / 3,
+    borderRadius: 10,
+    height: 50,
+    margin: 5,
+    width: Dimensions.get("window").width / 5,
   },
 });

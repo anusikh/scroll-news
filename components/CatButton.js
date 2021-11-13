@@ -12,10 +12,7 @@ const CatButton = () => {
         navigation.navigate("Categories");
       }}
     >
-      <LinearGradient
-        colors={["#4c669f", "#3b5998", "#192f6a"]}
-        style={styles.button}
-      >
+      <LinearGradient colors={["#7F0AC9", "#6B70D1"]} style={styles.button}>
         <Text style={styles.text}>Categories</Text>
       </LinearGradient>
     </TouchableOpacity>
@@ -28,13 +25,13 @@ const styles = StyleSheet.create({
   button: {
     width: 100,
     height: 40,
-    borderRadius: 20,
+    borderRadius: 10,
     display: "flex",
     flexDirection: "row",
     justifyContent: "center",
   },
   text: {
-    color: "#fff",
+    color: "white",
     padding: 10,
   },
 });
