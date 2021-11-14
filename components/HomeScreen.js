@@ -2,7 +2,7 @@ import React from "react";
 import { StyleSheet, View, Dimensions, ActivityIndicator } from "react-native";
 import Carousel from "react-native-snap-carousel";
 import { useDispatch } from "react-redux";
-import { getNews } from "../redux/reducer";
+import { getCrypto, getNews } from "../redux/reducer";
 import NewsCarouselItems from "./NewsCarouselItems";
 import { useSelector } from "react-redux";
 
@@ -14,6 +14,7 @@ const HomeScreen = () => {
 
   React.useEffect(() => {
     dispatch(getNews());
+    dispatch(getCrypto());
   }, []);
 
   return (
@@ -29,7 +30,6 @@ const HomeScreen = () => {
           onSnapToItem={(index) => setActiveIndex(index)}
         />
       ) : (
-        //TODO: add circular loading
         <View style={[styles.container, styles.horizontal]}>
           <ActivityIndicator size="large" color="#192f6a" />
         </View>
@@ -50,6 +50,7 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     flex: 1,
     justifyContent: "center",
+    backgroundColor: "black",
   },
   horizontal: {
     flexDirection: "row",

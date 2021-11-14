@@ -12,6 +12,8 @@ export const GET_SPNEWS = "GET_SPNEWS";
 const SET_SPNEWS = "SET_SPNEWS";
 export const GET_TNEWS = "GET_TNEWS";
 const SET_TNEWS = "SET_TNEWS";
+export const GET_CRYPTO = "GET_CRYPTO";
+const SET_CRYPTO = "SET_CRYPTO";
 
 export const getNews = () => ({
   type: GET_NEWS,
@@ -76,6 +78,15 @@ export const setTNews = (tnews) => ({
   tnews,
 });
 
+export const getCrypto = () => ({
+  type: GET_CRYPTO,
+});
+
+export const setCrypto = (crypto) => ({
+  type: SET_CRYPTO,
+  crypto,
+});
+
 const initialState = {
   news: undefined,
   fnews: undefined,
@@ -84,6 +95,7 @@ const initialState = {
   snews: undefined,
   spnews: undefined,
   tnews: undefined,
+  crypto: undefined,
 };
 
 export default (state = initialState, action) => {
@@ -109,6 +121,9 @@ export default (state = initialState, action) => {
     case SET_TNEWS:
       const { tnews } = action;
       return { ...state, tnews };
+    case SET_CRYPTO:
+      const { crypto } = action;
+      return { ...state, crypto };
     default:
       return state;
   }
