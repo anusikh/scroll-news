@@ -1,5 +1,6 @@
 import { all, fork, takeLatest } from "@redux-saga/core/effects";
 import {
+  GET_CRYPTO,
   GET_FNEWS,
   GET_GNEWS,
   GET_MNEWS,
@@ -9,6 +10,7 @@ import {
   GET_TNEWS,
 } from "../reducer";
 import {
+  handleGetCrypto,
   handleGetFNews,
   handleGetGNews,
   handleGetMNews,
@@ -46,6 +48,10 @@ function* tnewsSaga() {
   yield takeLatest(GET_TNEWS, handleGetTNews);
 }
 
+function* cryptoSaga() {
+  yield takeLatest(GET_CRYPTO, handleGetCrypto);
+}
+
 export function* watcherSaga() {
   yield all([
     fork(newsSaga),
@@ -55,5 +61,6 @@ export function* watcherSaga() {
     fork(snewsSaga),
     fork(spnewsSaga),
     fork(tnewsSaga),
+    fork(cryptoSaga),
   ]);
 }

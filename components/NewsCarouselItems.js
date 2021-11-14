@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     padding: 10,
     height: Dimensions.get("window").height - 55,
     width: Dimensions.get("window").width,
-    backgroundColor: "white",
+    backgroundColor: "black",
     transform: [{ scaleY: -1 }],
   },
   image: {
@@ -42,19 +42,24 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 30,
     marginBottom: 20,
+    color: "white",
   },
   author: {
     marginBottom: 2,
+    color: "white",
   },
   publishedAt: {
     fontSize: 10,
     marginBottom: 5,
+    color: "white",
   },
   footer: {
     position: "absolute",
+    color: "white",
     bottom: 0,
   },
   description: {
     marginTop: 15,
+    color: "white",
   },
 });

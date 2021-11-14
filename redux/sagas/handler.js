@@ -7,8 +7,9 @@ import {
   setSNews,
   setSPNews,
   setTNews,
+  setCrypto,
 } from "../reducer";
-import { requestGetNews } from "../sagas/request";
+import { requestGetCrypto, requestGetNews } from "../sagas/request";
 
 const urls = Object.freeze({
   url1: "country=in&language=en&apiKey=9908a284d11342b9819c623043e14fdc",
@@ -87,6 +88,16 @@ export function* handleGetTNews(action) {
     const response = yield call(requestGetNews, urls.tech);
     const { data } = response;
     yield put(setTNews(data));
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+export function* handleGetCrypto(action) {
+  try {
+    const response = yield call(requestGetCrypto);
+    const { data } = response;
+    yield put(setCrypto(data));
   } catch (err) {
     console.log(err);
   }

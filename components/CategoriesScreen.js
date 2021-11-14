@@ -4,6 +4,7 @@ import { Dimensions } from "react-native";
 import CatBoxes from "./CatBoxes";
 import { Icon } from "react-native-elements";
 import { useNavigation } from "@react-navigation/core";
+import CryptoTrackerComponent from "./CryptoTracker/CryptoTrackerComponent";
 
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
@@ -90,7 +91,7 @@ const CategoriesScreen = () => {
         />
       </View>
       <View style={styles.footer}>
-        <Text style={styles.footerText}> Select one of the categories</Text>
+        <CryptoTrackerComponent />
       </View>
     </View>
   );
@@ -103,13 +104,14 @@ const styles = StyleSheet.create({
     width: windowWidth,
     height: windowHeight,
     alignContent: "center",
+    backgroundColor: "black",
   },
   header: {
-    marginTop: 40,
+    marginTop: 20,
   },
   footer: {
     display: "flex",
-    marginTop: 100,
+    marginTop: 40,
     alignItems: "center",
   },
   footerText: {

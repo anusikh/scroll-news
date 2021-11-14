@@ -15,6 +15,10 @@ import store from "./redux/store";
 
 const Stack = createNativeStackNavigator();
 
+const headerStyle = {
+  backgroundColor: "black",
+};
+
 export default function App() {
   return (
     <Provider store={store}>
@@ -25,6 +29,8 @@ export default function App() {
             component={HomeScreen}
             options={{
               headerRight: () => <CatButton />,
+              headerStyle: headerStyle,
+              headerTintColor: "white",
             }}
           />
 
@@ -33,6 +39,8 @@ export default function App() {
             component={CategoriesScreen}
             options={{
               headerLeft: () => <></>,
+              headerStyle: headerStyle,
+              headerTintColor: "white",
             }}
           />
           <Stack.Screen
@@ -41,6 +49,8 @@ export default function App() {
             options={{
               headerRight: () => <CatButton />,
               headerLeft: () => <></>,
+              headerStyle: headerStyle,
+              headerTintColor: "white",
             }}
           />
           <Stack.Screen
@@ -49,6 +59,8 @@ export default function App() {
             options={{
               headerRight: () => <CatButton />,
               headerLeft: () => <></>,
+              headerStyle: headerStyle,
+              headerTintColor: "white",
             }}
           />
           <Stack.Screen
@@ -57,6 +69,8 @@ export default function App() {
             options={{
               headerRight: () => <CatButton />,
               headerLeft: () => <></>,
+              headerStyle: headerStyle,
+              headerTintColor: "white",
             }}
           />
           <Stack.Screen
@@ -65,6 +79,8 @@ export default function App() {
             options={{
               headerRight: () => <CatButton />,
               headerLeft: () => <></>,
+              headerStyle: headerStyle,
+              headerTintColor: "white",
             }}
           />
           <Stack.Screen
@@ -73,6 +89,8 @@ export default function App() {
             options={{
               headerRight: () => <CatButton />,
               headerLeft: () => <></>,
+              headerStyle: headerStyle,
+              headerTintColor: "white",
             }}
           />
           <Stack.Screen
@@ -81,6 +99,8 @@ export default function App() {
             options={{
               headerRight: () => <CatButton />,
               headerLeft: () => <></>,
+              headerStyle: headerStyle,
+              headerTintColor: "white",
             }}
           />
         </Stack.Navigator>
